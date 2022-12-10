@@ -47,7 +47,6 @@ export default class MyPicsController {
     async show({ params, response }: HttpContextContract) {
         const result = await MyPic.findBy("id", params.id)
         if (!result) throw Error('Item não existe.')
-        console.log('result', result)
 
         response.status(200)
         await result.load('comments')
