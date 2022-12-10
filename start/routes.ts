@@ -23,12 +23,8 @@ import MyPicsController from 'App/Controllers/Http/MyPicsController'
 import CommentsController from 'App/Controllers/Http/CommentsController'
 
 Route.group(() => {
-  Route.get('/', async () => {
-    return { hello: 'world' }
-  })
 
   Route.resource('/mypics', 'MyPicsController').apiOnly()
-
   Route.post('/mypics/:pic_id/comments', 'CommentsController.store')
 
 }).prefix('/api')
